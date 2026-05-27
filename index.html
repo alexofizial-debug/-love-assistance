@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Love Assistance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone-shell">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-icon">♡</span>
+          <span class="logo-text">Love <em>Assistance</em></span>
+        </div>
+        <div class="status-dot" id="statusDot"></div>
+      </div>
+    </header>
+
+    <!-- CONTEXT BANNER -->
+    <div class="context-bar">
+      <span id="contextLabel">Sin contexto activo</span>
+      <button class="ctx-btn" id="ctxBtn">+ Contexto</button>
+    </div>
+
+    <!-- CHAT AREA -->
+    <main class="chat-area" id="chatArea">
+      <div class="welcome-card">
+        <p class="welcome-emoji">💬</p>
+        <p class="welcome-title">Tu asistente de conquista</p>
+        <p class="welcome-sub">Escribe o habla lo que dice la otra persona y te daré frases, análisis y temas para que brilles.</p>
+      </div>
+    </main>
+
+    <!-- ANALYSIS PANEL -->
+    <div class="analysis-panel" id="analysisPanel" style="display:none">
+      <div class="panel-row">
+        <div class="pill-card" id="toneCard">
+          <span class="pill-label">Tono</span>
+          <span class="pill-value" id="toneVal">—</span>
+        </div>
+        <div class="pill-card" id="interestCard">
+          <span class="pill-label">Interés</span>
+          <span class="pill-value" id="interestVal">—</span>
+        </div>
+        <div class="pill-card" id="signalCard">
+          <span class="pill-label">Señal</span>
+          <span class="pill-value" id="signalVal">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUGGESTIONS ROW -->
+    <div class="suggestions-row" id="suggestionsRow" style="display:none">
+      <p class="sug-label">Frases sugeridas</p>
+      <div class="sug-chips" id="sugChips"></div>
+    </div>
+
+    <!-- INPUT AREA -->
+    <footer class="input-area">
+      <div class="input-row">
+        <textarea
+          id="userInput"
+          class="msg-input"
+          placeholder="¿Qué dijo ella/él?..."
+          rows="1"
+        ></textarea>
+        <button class="mic-btn" id="micBtn" title="Hablar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="23"/>
+            <line x1="8" y1="23" x2="16" y2="23"/>
+          </svg>
+        </button>
+        <button class="send-btn" id="sendBtn" title="Enviar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <p class="mic-hint" id="micHint"></p>
+    </footer>
+
+  </div>
+
+  <!-- CONTEXT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" style="display:none">
+    <div class="modal-box">
+      <h3 class="modal-title">Cuéntame el contexto</h3>
+      <p class="modal-sub">¿Quién es? ¿Dónde estás? ¿Cuánto se conocen?</p>
+      <textarea id="contextInput" class="modal-textarea" placeholder="Ej: Es una chica que conocí hace 2 semanas en el gym, hemos hablado poco pero hay química..."></textarea>
+      <div class="modal-actions">
+        <button class="modal-cancel" id="modalCancel">Cancelar</button>
+        <button class="modal-save" id="modalSave">Guardar contexto</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
