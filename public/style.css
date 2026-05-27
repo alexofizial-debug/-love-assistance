@@ -17,7 +17,7 @@
 
 html, body {
   height: 100%;
-  background: #1A0D13;
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,9 +37,8 @@ html, body {
   box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1.5px rgba(255,255,255,0.08);
 }
 
-@media (max-width: 768px) {
+@media (max-height: 880px) {
   .phone-shell { height: 100dvh; border-radius: 0; width: 100%; }
-  html, body { background: var(--cream); }
 }
 
 /* ── HEADER ── */
